@@ -46,7 +46,6 @@ public class LoginActivity extends ActionBarActivity{
         } else {
             doLogin();
         }
-        finish();
     }
 
 
@@ -54,14 +53,16 @@ public class LoginActivity extends ActionBarActivity{
     public void init() {
 
         user = Database.getInstance(this).getUser();
-        if(user == null) {
+        if(user != null) {
             etLoginConfirmPassword.setVisibility(View.GONE);
         }
     }
 
     public void doCreateAccount() {
         if (etLoginConfirmPassword.getText().toString().equals(etLoginPassword.getText().toString())) {
+            Database.getInstance(this).createUser(etLoginEmail.getText().toString(), etLoginPassword.getText().toString());
             PassCodeActivity_.intent(this).start();
+            finish();
         } else {
             tvLoginStatus.setText(getResources().getString(R.string.confirm_password_not_match));
         }
@@ -73,6 +74,7 @@ public class LoginActivity extends ActionBarActivity{
         }
         else {
             PassCodeActivity_.intent(this).start();
+            finish();
         }
     }
 }

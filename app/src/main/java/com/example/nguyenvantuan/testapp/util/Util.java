@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 /**
  * Created by nguyenvantuan on 7/15/15.
@@ -35,6 +37,19 @@ public class Util {
                 .setCancelable(false)
                 .setPositiveButton("OK", listener);
         return alertDialogBuilder.create();
+    }
+
+    public static int getScreenWidth(Context context) {
+        WindowManager wm = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dimension = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dimension);
+        return dimension.widthPixels;
+    }
+
+    public static int convertDPToPixels(Context context, int dp) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return (int) (dp * density);
     }
 
 }
