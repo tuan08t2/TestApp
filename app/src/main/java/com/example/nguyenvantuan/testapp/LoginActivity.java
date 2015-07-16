@@ -19,7 +19,7 @@ import org.androidannotations.annotations.TextChange;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_login)
-public class LoginActivity extends ActionBarActivity{
+public class LoginActivity extends BaseActionBarActivity{
 
     @ViewById(R.id.tv_login_status)
     protected TextView tvLoginStatus;

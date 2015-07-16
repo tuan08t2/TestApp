@@ -7,6 +7,9 @@ import android.content.SharedPreferences;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by nguyenvantuan on 7/15/15.
  */
@@ -52,4 +55,21 @@ public class Util {
         return (int) (dp * density);
     }
 
+    public static String encrypt(String string){
+        try {
+            MessageDigest sss = MessageDigest.getInstance("SHA-256");
+            sss.update(string.getBytes());
+            byte byteData[] = sss.digest();
+
+            StringBuffer sb = new StringBuffer();
+            for(byte tmp: byteData) {
+                sb.append(Integer.toString((tmp & 0xff) + 0x100, 16).substring(1));
+            }
+
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

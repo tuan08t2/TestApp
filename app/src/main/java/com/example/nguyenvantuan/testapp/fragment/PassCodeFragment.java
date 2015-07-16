@@ -2,12 +2,15 @@ package com.example.nguyenvantuan.testapp.fragment;
 
 
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.nguyenvantuan.testapp.MainActivity;
+import com.example.nguyenvantuan.testapp.MainActivity_;
 import com.example.nguyenvantuan.testapp.R;
 import com.example.nguyenvantuan.testapp.database.Database;
 import com.example.nguyenvantuan.testapp.util.PassCode;
@@ -27,6 +30,9 @@ public class PassCodeFragment extends Fragment implements OnPassCodeChangeListen
         CREATE
     }
 
+    @ViewById(R.id.tv_pass_code_status)
+    protected TextView tvPassCodeStatus;
+
     @ViewById(R.id.ll_pass_code)
     protected LinearLayout llPassCode;
 
@@ -37,7 +43,7 @@ public class PassCodeFragment extends Fragment implements OnPassCodeChangeListen
 
     @AfterViews
     public void init() {
-
+        getActivity().setTitle(R.string.title_activity_pass_code);
         int etWidth = (Util.getScreenWidth(getActivity()) - Util.convertDPToPixels(getActivity(), 30)) / 4;
         LinearLayout.LayoutParams params;
         for (int index = 0; index < llPassCode.getChildCount(); index++) {
@@ -53,12 +59,15 @@ public class PassCodeFragment extends Fragment implements OnPassCodeChangeListen
 
     @Override
     public void onChange(String passCode) {
+        Log.i("xxx", passCode + ", " + Database.getInstance(getActivity()).getUser().getPassCode());
         if(mode == Mode.CREATE) {
             Database.getInstance(getActivity()).updateUserPassCode(passCode);
-            //todo start mainActivity
+            MainActivity_.intent(getActivity()).start();
         } else if(Database.getInstance(getActivity()).getUser().getPassCode().equals(passCode)){
-            //todo start mainActivity
-
+            MainActivity_.intent(getActivity()).start();
+        }
+        else {
+            tvPassCodeStatus.setText(getResources().getString(R.string.text_pass_code_wrong));
         }
     }
 }

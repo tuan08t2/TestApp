@@ -18,6 +18,17 @@
     <string name="confirm_password_not_match">Confirm password not match</string>
     <string name="login_fail">Email or password not match</string>
 
+    <string name="text_pass_code_wrong">Invalid passcode, please try again</string>
+    <string name="text_change_email_current">Current email</string>
+    <string name="text_change_email_new">New email</string>
+    <string name="text_change_email_confirm">Confirm email</string>
+    <string name="text_edit_text_empty">Fields are not empty</string>
+    <string name="text_confirm_email_fail">Confirm email not match</string>
+    <string name="text_confirm_password_fail">Confirm password not match</string>
+    <string name="text_change_email_success">Update email successful</string>
+    <string name="text_change_password_success">Update password successful</string>
+    <string name="text_password_wrong">Wrong password</string>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

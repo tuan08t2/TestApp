@@ -14,14 +14,16 @@ public class SplashActivity extends ActionBarActivity {
 
     @AfterViews
     public void initHandler() {
-        Handler mHandler = new Handler();
-        Runnable mUpdateTimeTask = new Runnable() {
-            public void run() {
-                goToActivity();
-                finish();
-            }
-        };
-        mHandler.postDelayed(mUpdateTimeTask, 2000);
+        ChangeEmailActivity_.intent(this).start();
+        finish();
+//        Handler mHandler = new Handler();
+//        Runnable mUpdateTimeTask = new Runnable() {
+//            public void run() {
+//                goToActivity();
+//                finish();
+//            }
+//        };
+//        mHandler.postDelayed(mUpdateTimeTask, 2000);
     }
 
     public void goToActivity() {
