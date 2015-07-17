@@ -5,6 +5,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.nguyenvantuan.testapp.fragment.ChangeEmailFragment;
 import com.example.nguyenvantuan.testapp.fragment.ChangeEmailFragment_;
+import com.example.nguyenvantuan.testapp.fragment.SettingFontFragment;
+import com.example.nguyenvantuan.testapp.fragment.SettingFontFragment_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -19,8 +21,9 @@ public class ChangeEmailActivity extends BaseActionBarActivity {
     @AfterViews
     public void init() {
         setUpActionBar();
-        ChangeEmailFragment changeEmailFragment = ChangeEmailFragment_.builder().build();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fr_change_email, changeEmailFragment).commit();
+        //ChangeEmailFragment changeEmailFragment = ChangeEmailFragment_.builder().build();
+        SettingFontFragment f = SettingFontFragment_.builder().build();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fr_change_email, f).commit();
     }
 
     public void setUpActionBar() {

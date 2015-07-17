@@ -26,5 +26,9 @@
     <dimen name="text_view_radio_padding_left">8dp</dimen>
     <dimen name="ll_padding_left">18dp</dimen>
 
+    <!-- Default color picker size -->
+    <dimen name="color_picker_width">0dp</dimen>
+    <dimen name="color_picker_height">60dp</dimen>
+
 
 </resources>

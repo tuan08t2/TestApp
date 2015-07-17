@@ -18,9 +18,6 @@ import org.androidannotations.annotations.ViewById;
 @EFragment(R.layout.fragment_change_email)
 public class ChangeEmailFragment extends Fragment{
 
-    @ViewById(R.id.scroll_change_email)
-    protected ScrollView mScrollChangeEmail;
-
     @ViewById(R.id.tv_change_email_status)
     protected TextView tvStatus;
 
