@@ -160,9 +160,9 @@ public class LineColorPicker extends View {
 		}
 	}
 
-	private void onColorChanged(int color) {
+	private void onColorChanged(int color, int position) {
 		if (onColorChanged != null) {
-			onColorChanged.onColorChanged(color);
+			onColorChanged.onColorChanged(color, position);
 		}
 	}
 
@@ -175,16 +175,16 @@ public class LineColorPicker extends View {
 
 		int actionId = event.getAction();
 
-		int newColor;
+		int[] newColorAndPos;
 
 		switch (actionId) {
 		case MotionEvent.ACTION_DOWN:
 			isClick = true;
 			break;
 		case MotionEvent.ACTION_UP:
-			newColor = getColorAtXY(event.getX(), event.getY());
+			newColorAndPos = getColorAtXY(event.getX(), event.getY());
 
-			setSelectedColor(newColor);
+			setSelectedColor(newColorAndPos[0], newColorAndPos[1]);
 
 			if (isClick) {
 				performClick();
@@ -193,9 +193,9 @@ public class LineColorPicker extends View {
 			break;
 
 		case MotionEvent.ACTION_MOVE:
-			newColor = getColorAtXY(event.getX(), event.getY());
+			newColorAndPos = getColorAtXY(event.getX(), event.getY());
 
-			setSelectedColor(newColor);
+			setSelectedColor(newColorAndPos[0], newColorAndPos[1]);
 
 			break;
 		case MotionEvent.ACTION_CANCEL:
@@ -216,7 +216,7 @@ public class LineColorPicker extends View {
 	/**
 	 * Return color at x,y coordinate of view.
 	 */
-	private int getColorAtXY(float x, float y) {
+	private int[] getColorAtXY(float x, float y) {
 
 		// FIXME: colors.length == 0 -> devision by ZERO.s
 
@@ -229,7 +229,7 @@ public class LineColorPicker extends View {
 				right += cellSize;
 
 				if (left <= x && right >= x) {
-					return colors[i];
+					return new int[] {colors[i], i};
 				}
 			}
 
@@ -242,12 +242,12 @@ public class LineColorPicker extends View {
 				bottom += cellSize;
 
 				if (y >= top && y <= bottom) {
-					return colors[i];
+					return new int[] {colors[i], i};
 				}
 			}
 		}
 
-		return selectedColor;
+		return new int[] {selectedColor, 0};
 	}
 
 	@Override
@@ -347,7 +347,7 @@ public class LineColorPicker extends View {
 	/**
 	 * Set selected color as color value from palette.
 	 */
-	public void setSelectedColor(int color) {
+	public void setSelectedColor(int color, int position) {
 
 		// not from current palette
 		if (!containsColor(colors, color)) {
@@ -362,7 +362,7 @@ public class LineColorPicker extends View {
 
 			invalidate();
 
-			onColorChanged(color);
+			onColorChanged(color, position);
 		}
 	}
 
@@ -370,7 +370,7 @@ public class LineColorPicker extends View {
 	 * Set selected color as index from palete
 	 */
 	public void setSelectedColorPosition(int position) {
-		setSelectedColor(colors[position]);
+		setSelectedColor(colors[position], position);
 	}
 
 	/**

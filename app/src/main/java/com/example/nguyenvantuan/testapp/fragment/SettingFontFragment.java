@@ -17,9 +17,10 @@ import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
 
 import uz.shift.colorpicker.LineColorPicker;
+import uz.shift.colorpicker.OnColorChangedListener;
 
 @EFragment(R.layout.fragment_setting_font)
-public class SettingFontFragment extends Fragment{
+public class SettingFontFragment extends Fragment implements OnColorChangedListener{
 
 
     @ViewById(R.id.color_picker_font)
@@ -42,10 +43,15 @@ public class SettingFontFragment extends Fragment{
         colorPicker.setColors(colors);
 
         // Set selected color [optional]
-        colorPicker.setSelectedColor(colors[0]);
+        colorPicker.setSelectedColor(colors[0], 0);
+        colorPicker.setOnColorChangedListener(this);
     }
 
 
+    @Override
+    public void onColorChanged(int c, int position) {
+        if(position == pallete.length) {
 
-
+        }
+    }
 }
