@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestApp.iml" filepath="$PROJECT_DIR$/TestApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiftcolorpicker/shiftcolorpicker.iml" filepath="$PROJECT_DIR$/shiftcolorpicker/shiftcolorpicker.iml" />
     </modules>
   </component>
 </project>

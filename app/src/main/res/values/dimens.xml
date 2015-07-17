@@ -20,4 +20,11 @@
     <dimen name="font_size_normal">15sp</dimen>
     <dimen name="font_size_large">20sp</dimen>
 
+    <!-- Default radio group padding. -->
+    <dimen name="rg_padding_left">10dp</dimen>
+    <dimen name="rg_custom_padding_left">8dp</dimen>
+    <dimen name="text_view_radio_padding_left">8dp</dimen>
+    <dimen name="ll_padding_left">18dp</dimen>
+
+
 </resources>

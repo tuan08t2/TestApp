@@ -29,6 +29,18 @@
     <string name="text_change_password_success">Update password successful</string>
     <string name="text_password_wrong">Wrong password</string>
 
+    <string name="text_font_size">Text size:</string>
+    <string name="text_font_size_small">Small</string>
+    <string name="text_font_size_normal">Normal</string>
+    <string name="text_font_size_large">Large</string>
+    <string name="text_font_name">Font:</string>
+    <string name="text_font_color">Text color:</string>
+    <string name="text_font_type">Android font</string>
+    <string name="text_font_color_red">Red</string>
+    <string name="text_font_color_blue">Blue</string>
+    <string name="text_font_color_pink">Pink</string>
+    <string name="text_font_color_custom">Custom</string>
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
