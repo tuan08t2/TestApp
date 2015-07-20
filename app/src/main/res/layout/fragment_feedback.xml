@@ -15,14 +15,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/text_feedback_msg"/>
-        <EditText
+        <com.example.nguyenvantuan.testapp.view.LinedEditText
             android:id="@+id/et_feedback_msg"
             android:inputType="textMultiLine"
             android:layout_marginTop="@dimen/et_default_margin_top"
             android:padding="@dimen/et_default_padding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minLines="8"
+            android:layout_height="400dp"
             android:background="@drawable/bg_edit_text"/>
 
         <Button

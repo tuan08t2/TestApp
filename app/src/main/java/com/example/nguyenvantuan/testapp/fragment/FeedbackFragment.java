@@ -1,6 +1,7 @@
 package com.example.nguyenvantuan.testapp.fragment;
 
 
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.widget.EditText;
 
@@ -25,6 +26,8 @@ public class FeedbackFragment extends Fragment{
     @AfterViews
     public void init() {
         getActivity().setTitle(R.string.title_activity_pass_code);
+        Typeface typeFace = Typeface.createFromAsset(getResources().getAssets(), "font/alext_bust.ttf");
+       // etFeedback.setTypeface(typeFace);
     }
 
 
