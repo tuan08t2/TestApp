@@ -1,0 +1,37 @@
+<ScrollView
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/layout_setting_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/text_feedback_msg"/>
+        <EditText
+            android:id="@+id/et_feedback_msg"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="@dimen/et_default_margin_top"
+            android:padding="@dimen/et_default_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="8"
+            android:background="@drawable/bg_edit_text"/>
+
+        <Button
+            android:layout_marginTop="@dimen/btn_default_margin_top"
+            android:id="@+id/btn_feedback_send"
+            android:layout_width="@dimen/btn_default_width"
+            android:layout_height="@dimen/btn_default_height"
+            android:text="@string/text_feedback_send"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</ScrollView>
+
