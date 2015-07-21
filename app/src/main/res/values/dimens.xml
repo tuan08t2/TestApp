@@ -29,6 +29,10 @@
     <!-- Default color picker size -->
     <dimen name="color_picker_width">0dp</dimen>
     <dimen name="color_picker_height">60dp</dimen>
+    <dimen name="default_slider_handler_radius">10dp</dimen>
+    <dimen name="default_slider_bar_height">4dp</dimen>
+    <dimen name="colorpickerview__default_slider_handler_radius">10dp</dimen>
+    <dimen name="colorpickerview__default_slider_height">6dp</dimen>
 
 
 </resources>
